@@ -1,0 +1,52 @@
+﻿@model ServiceFormVm
+
+@section Header {
+
+    <h1>Services</h1>
+}
+
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Create</h3>
+        </div>
+
+
+        <form asp-controller="Service" asp-action="Create" enctype="multipart/form-data">
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Enter About Us Information">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image"></label>
+                    <input asp-for="Image" class="form-control-file imageInput">
+                </div>
+                <div class="form-group">
+                    <img src="#" class="imagePreview" style="display:none" width="80px;" />
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts {
+    <script>
+        document.querySelector(".imageInput").addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            const imagePreview = document.querySelector(".imagePreview");
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "Block";
+                }
+                reader.readAsDataURL(file);
+            }
+        })
+    </script>
+}
+

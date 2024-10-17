@@ -1,0 +1,23 @@
+﻿@model AboutDetailsVm
+@section Header {
+
+    <h1>Title Details</h1>
+}
+
+<div class="col-md-12">
+    <div class="card card-success">
+        <div class="card-header">
+            <h3 class="card-title">@Model.Title Details</h3>
+        </div>
+        <div class="card-body">
+            <li>Description: @Model.Description</li>
+            <br>
+            <li>Status: @(Model.IsDeleted ? "Active" : "Deleted")</li>
+            <br>
+            <li>CreatedAt: @Model.CreatedAt</li>
+            <br>
+            <li>Image: <img src="~/files/images/about/@Model.ImageName" width="50px" /></li>
+        </div>
+
+    </div>
+</div>

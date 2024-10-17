@@ -1,0 +1,15 @@
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\bin\Debug\net8.0\Sun.BLL.deps.json
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\bin\Debug\net8.0\Sun.BLL.dll
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\bin\Debug\net8.0\Sun.BLL.pdb
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\bin\Debug\net8.0\Sun.DAL.dll
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\bin\Debug\net8.0\Sun.DAL.pdb
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.csproj.AssemblyReference.cache
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.AssemblyInfoInputs.cache
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.AssemblyInfo.cs
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.csproj.CoreCompileInputs.cache
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.csproj.CopyComplete
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.dll
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\refint\Sun.BLL.dll
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.pdb
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\ref\Sun.BLL.dll

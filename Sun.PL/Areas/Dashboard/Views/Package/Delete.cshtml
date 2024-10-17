@@ -1,0 +1,25 @@
+﻿@model PackageShowVm
+
+@section Header{
+    <h1>Delete Package</h1>
+}
+
+<div class="col-md-12">
+    <div class="card card-danger">
+        <div class="card-header">
+            <h3 class="card-title">Delete Confirmation</h3>
+        </div>
+        <div class="card-body">
+            <p> Are you Sure to want to delete @Model.Name about us title</p>
+        </div>
+
+        <div class="card-footer">
+            <form asp-controller="Package" asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger"> Delete </button>
+                <a asp-controller="Package" asp-action="Index" class="btn btn">Cancel</a>
+            </form>
+        </div>
+
+    </div>
+</div>
