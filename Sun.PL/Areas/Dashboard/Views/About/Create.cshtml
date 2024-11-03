@@ -12,22 +12,15 @@
         </div>
 
 
-        <form asp-controller="About" asp-action="Create" enctype="multipart/form-data">
+        <form asp-controller="About" asp-action="Create">
             <div class="card-body">
                 <div class="form-group">
                     <label asp-for="Title">Title</label>
                     <input asp-for="Title" type="text" class="form-control" placeholder="Enter About Us Information">
                 </div>
                 <div class="form-group">
-                    <label asp-for="Description">Password</label>
+                    <label asp-for="Description">Description</label>
                     <input asp-for="Description" type="text" class="form-control" placeholder="Enter Description">
-                </div>
-                <div class="form-group">
-                    <label asp-for="Image"></label>
-                    <input asp-for="Image" class="form-control-file imageInput">
-                </div>
-                <div class="form-group">
-                    <img src="#" class="imagePreview" style="display:none" width="80px;" />
                 </div>
             </div>
 
@@ -39,19 +32,5 @@
 </div>
 
 @section scripts {
-    <script>
-        document.querySelector(".imageInput").addEventListener("change", (event) => {
-            const file = event.target.files[0];
-            const imagePreview = document.querySelector(".imagePreview");
-            if(file){
-                const reader = new FileReader();
-                reader.onload = function (e) 
-                {
-                    imagePreview.src = e.target.result;
-                    imagePreview.style.display = "Block";
-                }
-                reader.readAsDataURL(file);
-            }
-        })
-    </script>
+    
 }

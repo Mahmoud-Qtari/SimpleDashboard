@@ -1,7 +1,7 @@
-﻿@model AboutDetailsVm
+﻿@model PackageItemDetailsVm
 @section Header {
 
-    <h1>Title Details</h1>
+    <h1>Item Details</h1>
 }
 
 <div class="col-md-12">
@@ -10,6 +10,8 @@
             <h3 class="card-title">@Model.Title Details</h3>
         </div>
         <div class="card-body">
+            <li>Price: @Model.Price</li>
+            <br>
             <li>Description: @Model.Description</li>
             <br>
             <li>Status: @(Model.IsDeleted ? "Active" : "Deleted")</li>

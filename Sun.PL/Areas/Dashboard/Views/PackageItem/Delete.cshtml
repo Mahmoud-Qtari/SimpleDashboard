@@ -1,7 +1,7 @@
-﻿@model AboutShowVm
+﻿@model PackageItemShowVm
 
 @section Header{
-    <h1>Delete About Title</h1>
+    <h1>Delete Item</h1>
 }
 
 <div class="col-md-12">
@@ -14,10 +14,10 @@
         </div>
 
         <div class="card-footer">
-            <form asp-controller="About" asp-action="Delete">
+            <form asp-controller="PackageItem" asp-action="Delete">
                 <input type="hidden" asp-for="Id" />
                 <button type="submit" class="btn btn-danger"> Delete </button>
-                <a asp-controller="About" asp-action="Index" class="btn btn">Cancel</a>
+                <a asp-controller="PackageItem" asp-action="Index" class="btn btn">Cancel</a>
             </form>
         </div>
 

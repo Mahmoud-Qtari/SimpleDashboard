@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sun.DAL.Data;
 using Sun.DAL.Models;
@@ -7,6 +8,7 @@ using Sun.PL.Helper;
 
 namespace Sun.PL.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin,SuperAdmin")]
     [Area("Dashboard")]
     public class ProductController : Controller
     {

@@ -1,7 +1,7 @@
-﻿@model AboutFormVm
+﻿@model PackageItemFormVm
 
 @section Header {
-    <h1>Edit About Us</h1>
+    <h1>Edit Package Items</h1>
 }
 
 <div class="col-md-12">
@@ -11,17 +11,21 @@
         </div>
 
 
-        <form asp-controller="About" asp-action="Edit" enctype="multipart/form-data">
+        <form asp-controller="PackageItem" asp-action="Edit" enctype="multipart/form-data">
             <div class="card-body">
                 <input type="hidden" asp-for="Id" />
                 <input type="hidden" asp-for="ImageName" />
                 <div class="form-group">
                     <label asp-for="Title">Title</label>
-                    <input asp-for="Title" type="text" class="form-control" placeholder="Enter About Us Information">
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Enter Item Title">
                 </div>
                 <div class="form-group">
-                    <label asp-for="Description">Password</label>
-                    <input asp-for="Description" type="text" class="form-control" placeholder="Enter Description">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" type="text" class="form-control" placeholder="Enter Item Price">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" type="text" class="form-control" placeholder="Enter Item Description">
                 </div>
                 <div class="form-group">
                     <label asp-for="IsDeleted"></label>

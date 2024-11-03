@@ -27,12 +27,14 @@
                     <input asp-for="Description" type="text" class="form-control" placeholder="Enter Description">
                 </div>
                 <div class="form-group">
-                    <label asp-for="PackageId">Select package</label>
-                    <select asp-for="PackageId" class="form-control" asp-items="Model.packagesList"></select>
-                </div>
-                <div class="form-group">
                     <label asp-for="Image"></label>
                     <input asp-for="Image" class="form-control-file imageInput">
+                </div>
+                <div class="form-group">
+                    <label asp-for="PackageId"></label>
+                    <select asp-for="PackageId" class="form-control" asp-items="@Model.packagesList">
+
+                    </select>
                 </div>
                 <div class="form-group">
                     <img src="#" class="imagePreview" style="display:none" width="80px;" />

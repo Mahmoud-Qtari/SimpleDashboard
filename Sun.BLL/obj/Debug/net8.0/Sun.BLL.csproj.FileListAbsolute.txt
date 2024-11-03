@@ -13,3 +13,4 @@ C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.dl
 C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\refint\Sun.BLL.dll
 C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.pdb
 C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\ref\Sun.BLL.dll
+C:\Users\localadmin\Desktop\asp9\project\Sun\Sun.BLL\obj\Debug\net8.0\Sun.BLL.sourcelink.json

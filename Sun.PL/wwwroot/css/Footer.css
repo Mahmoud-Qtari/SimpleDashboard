@@ -1,0 +1,156 @@
+﻿.package .img{
+    width: 100% !important;
+}
+.Product .carousel {
+    background-color: #DF97A2;
+    padding: 0px;
+}
+.Product .container {
+    width: 400px !important;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: black !important;
+}
+.carousel-indicators Button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+}
+.carousel-indicators {
+    margin-bottom: -3rem !important;
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #DF97A2 !important;
+}
+.header .submit {
+    background-color: #DF97A2;
+    color: white !important;
+    border: none;
+    font-size: 40px;
+    padding: 0px 20px 0px 20px;
+}
+.header h2 {
+    color: white;
+    font-weight: 400 !important;
+    margin-bottom: 1.5rem !important;
+    font-size: calc(1.575rem + 3.9vw);
+    line-height: 1.2;
+}
+.about .fa-face-grin-hearts {
+    font-size: 50px !important;
+    margin-top: 10px !important;
+    color: #DF97A2;
+}
+.professional .header2,
+.services .header2,
+.about .header2,
+.Product .header2{
+    text-align: center !important;
+    color: #797876;
+    padding-bottom: 30px;
+    font-weight: 400;
+}
+.professional .card,
+.services .card,
+.about .card{
+    border: none;
+    padding-top: 50px;
+    margin-top: 20px;
+}
+    .professional .card img,
+    .services .card img
+    /*.Product img */{
+        height: 200px !important;
+        width: 200px !important;
+    }
+.professional p,
+.services p,
+.about p{
+    color: #797876;
+}
+.footer .social-icons a {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    color: #DF97A2;
+    border: 1px solid #DF97A2;
+    text-decoration: none;
+}
+    .footer .social-icons a:hover {
+        background-color: #DF97A2 !important;
+        color:white !important;
+        cursor:pointer;
+    }
+    .info .info-details {
+        text-decoration: none;
+        color: black;
+    }
+.footer p,
+.footer span {
+    color: #797876;
+    font-size: 18px;
+    font-weight: 300;
+}
+.footer .fa-clock{
+    color: #DF97A2;
+}
+.footer h2 {
+    font-weight: 700;
+    color: #797876;
+    font-size: 16px !important;
+}
+.formData,
+.services {
+    background-image: url('../files/images/formbackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+    .formData .container{
+        width:75%;
+    }
+.form-data input {
+    height: 60px;
+    margin: 10px 0px;
+    color: #797876 !important;
+}
+.form-data .Description{
+    height: 120px;
+}
+.form-data .submit {
+    background-color: #DF97A2;
+    color: white !important;
+    border: none;
+}
+/*
+    .footer svg path {
+        fill: rgba(125, 143, 158, 0.1);
+    }
+
+    .footer .container .row img {
+        width: 60%;
+        background-color: transparent !important;
+        color: white !important;
+    }
+
+    .footer .container .row i {
+        color: var(--main-color) !important;
+        padding-right: 5px;
+    }
+
+    .footer .container .row .op-hour {
+        border-bottom: 1px solid rgba(125, 143, 158, 0.5);
+    }
+
+    .footer .container .row .pay-card {
+        position: relative;
+        padding-top: 20px;
+        margin-right: 50px;
+    }
+
+    .footer .container .footer-detals {
+        border-top: 1px solid rgba(125, 143, 158, 0.5);
+    }
+*/

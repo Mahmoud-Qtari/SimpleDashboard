@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sun.DAL.Data;
 
@@ -8,6 +9,7 @@ using Sun.PL.Helper;
 
 namespace Sun.PL.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin,SuperAdmin")]
     [Area("Dashboard")]
     public class ServiceController : Controller
     {

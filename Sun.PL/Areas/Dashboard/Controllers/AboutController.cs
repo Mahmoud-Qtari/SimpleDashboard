@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sun.DAL.Data;
 using Sun.DAL.Models;
@@ -7,6 +8,7 @@ using Sun.PL.Helper;
 
 namespace Sun.PL.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles ="Admin,SuperAdmin")]
     [Area("Dashboard")]
     public class AboutController : Controller
     {
@@ -39,7 +41,6 @@ namespace Sun.PL.Areas.Dashboard.Controllers
             {
                 return View(viewModel);
             }
-            viewModel.ImageName = FilesSetting.UploadFile(viewModel.Image, "about");
             var about = mapper.Map<About>(viewModel);
             context.abouts.Add(about);
             context.SaveChanges();
@@ -78,8 +79,6 @@ namespace Sun.PL.Areas.Dashboard.Controllers
             {
                 return RedirectToAction(nameof(Index));
             }
-            FilesSetting.DeleteFile(about.ImageName, "about");
-
             context.abouts.Remove(about);
             context.SaveChanges();
             return Ok(new {message="about deleted"});
@@ -104,16 +103,6 @@ namespace Sun.PL.Areas.Dashboard.Controllers
             if (aboutvm is null)
             {
                 return NotFound();
-            }
-            if(vm.Image is null)
-            {
-                
-                ModelState.Remove("Image");
-            }
-            else
-            {
-                FilesSetting.DeleteFile(aboutvm.ImageName, "about");
-                vm.ImageName = FilesSetting.UploadFile(vm.Image, "about");
             }
             if (!ModelState.IsValid)
             {

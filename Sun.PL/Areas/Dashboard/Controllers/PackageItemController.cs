@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sun.DAL.Data;
@@ -8,6 +9,7 @@ using Sun.PL.Helper;
 
 namespace Sun.PL.Areas.Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin,SuperAdmin")]
     [Area("Dashboard")]
     public class PackageItemController : Controller
     {
@@ -19,20 +21,20 @@ namespace Sun.PL.Areas.Dashboard.Controllers
             this.context = context;
             this.mapper = mapper;
         }
-        //public IActionResult Index()
-        //{
-        //    var abouts = context.abouts.ToList();
-        //    var aboutVm = mapper.Map<IEnumerable<AboutShowVm>>(abouts);
-        //    return View(aboutVm);
-        //}
+        public IActionResult Index()
+        {
+            var items = context.packageitems.ToList();
+            var itemVm = mapper.Map<IEnumerable<PackageItemShowVm>>(items);
+            return View(itemVm);
+        }
 
         [HttpGet]
-        public IActionResult Create() 
+        public IActionResult Create()
         {
-            var packages = context.packages.ToList();
+            var package = context.packages.ToList();
             var vm = new PackageItemFormVm
             {
-                packagesList = new SelectList(packages,"Id","Name")
+                packagesList = new SelectList(package,"Id","Name")
             };
             return View(vm);
         }
@@ -46,8 +48,8 @@ namespace Sun.PL.Areas.Dashboard.Controllers
                 return View(viewModel);
             }
             viewModel.ImageName = FilesSetting.UploadFile(viewModel.Image, "item");
-            var packageItem = mapper.Map<PackageItem>(viewModel);
-            context.packageitems.Add(packageItem);
+            var item = mapper.Map<PackageItem>(viewModel);
+            context.packageitems.Add(item);
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
@@ -55,59 +57,59 @@ namespace Sun.PL.Areas.Dashboard.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-            var about = context.abouts.Find(id);
-            if(about is null)
+            var item = context.packageitems.Find(id);
+            if(item is null)
             {
                 return NotFound();
             }
-            var aboutVm = mapper.Map<AboutDetailsVm>(about);
-            return View(aboutVm);
+            var itemVm = mapper.Map<PackageItemDetailsVm>(item);
+            return View(itemVm);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var about = context.abouts.Find(id);
-            if (about is null)
+            var item = context.packageitems.Find(id);
+            if (item is null)
             {
                 return NotFound();
             }
-            var aboutVm = mapper.Map<AboutShowVm>(about);
-            return View(aboutVm);
+            var itemVm = mapper.Map<PackageItemShowVm>(item);
+            return View(itemVm);
         }
         //ActionName("Delete")
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteAbout(int id) 
         {
-            var about = context.abouts.Find(id);
-            if (about is null)
+            var item = context.packageitems.Find(id);
+            if (item is null)
             {
                 return RedirectToAction(nameof(Index));
             }
-            FilesSetting.DeleteFile(about.ImageName, "about");
+            FilesSetting.DeleteFile(item.ImageName, "item");
 
-            context.abouts.Remove(about);
+            context.packageitems.Remove(item);
             context.SaveChanges();
-            return Ok(new {message="about deleted"});
+            return Ok(new {message="item deleted"});
         }
 
         public IActionResult Edit(int id)
         {
-            var about = context.abouts.Find(id);
-            if (about is null)
+            var item = context.packageitems.Find(id);
+            if (item is null)
             {
                 return NotFound();
             }
-            var viewModel = mapper.Map<AboutFormVm>(about);
+            var viewModel = mapper.Map<PackageItemFormVm>(item);
             return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(AboutFormVm vm)
+        public IActionResult Edit(PackageItemFormVm vm)
         {
-            var aboutvm = context.abouts.Find(vm.Id);
-            if (aboutvm is null)
+            var itemvm = context.packageitems.Find(vm.Id);
+            if (itemvm is null)
             {
                 return NotFound();
             }
@@ -118,15 +120,15 @@ namespace Sun.PL.Areas.Dashboard.Controllers
             }
             else
             {
-                FilesSetting.DeleteFile(aboutvm.ImageName, "about");
-                vm.ImageName = FilesSetting.UploadFile(vm.Image, "about");
+                FilesSetting.DeleteFile(itemvm.ImageName, "item");
+                vm.ImageName = FilesSetting.UploadFile(vm.Image, "item");
             }
             if (!ModelState.IsValid)
             {
                 return View(vm);
             }
             
-            mapper.Map(vm,aboutvm);
+            mapper.Map(vm,itemvm);
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }

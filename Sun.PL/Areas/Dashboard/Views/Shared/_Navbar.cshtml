@@ -5,10 +5,22 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
+            <a asp-controller="About" asp-action="Index" class="nav-link">About</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a asp-controller="Package" asp-action="Index" class="nav-link">Package</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-controller="PackageItem" asp-action="Index" class="nav-link">PackageItem</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-controller="Product" asp-action="Index" class="nav-link">Product</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-controller="Professional" asp-action="Index" class="nav-link">Professional</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-controller="Service" asp-action="Index" class="nav-link">Service</a>
         </li>
     </ul>
 
@@ -121,15 +133,11 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
+        
         <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                <i class="fas fa-expand-arrows-alt"></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
-            </a>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
         </li>
     </ul>
 </nav>
